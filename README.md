@@ -99,3 +99,11 @@
 * Entity
 * DTO/View Model
 * Anonymous Type
+
+# Concurrency
+* Client Wins or Last in Wins scenario (automatically) : son gelen transactiondaki veriler basılır.
+* Store Wins : son güncel değerleri görerek güncellemek oluyor. IsRowVersion() & DbCurrencyException()
+
+Type of Concurrency
+1. Optimistic concurrency control  : efcore default davranış. 
+2. Pessimistic concurrency control (xlock) : ilgili querye lock konur ve başka transactionlar okuma dahil yapılmaz.
